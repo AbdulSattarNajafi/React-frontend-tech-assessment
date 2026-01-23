@@ -1,30 +1,21 @@
-import React from 'react'
-import './App.css'
+import "./App.css";
+import CreateTaskForm from "./components/CreateTaskForm";
+import TaskList from "./components/TaskList";
 
 function App() {
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>Task Manager</h1>
-        <p>React Frontend Developer Assessment</p>
+    <div className="flex min-h-dvh flex-col">
+      <header className="bg-[#2c3e50] p-8 text-center text-white shadow-sm">
+        <h1 className="mb-2 text-[2.5rem]">Task Manager</h1>
+        <p className="opacity-90">React Frontend Developer Assessment</p>
       </header>
-      
-      <main className="app-main">
-        {/* 
-          TODO: Implement the following components:
-          1. TaskList component (Task 1)
-          2. TaskForm component (Task 2)
-          3. Task filtering and status management (Task 3)
-        */}
-        
-        <div className="placeholder">
-          <h2>Welcome to the Assessment!</h2>
-          <p>Please refer to the README.md for task instructions.</p>
-          <p>Start by implementing the TaskList component to display tasks from the API.</p>
-        </div>
+
+      <main className="mx-auto w-full max-w-300 flex-1 space-y-5 px-4 py-8 lg:px-8">
+        <CreateTaskForm />
+        <TaskList />
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

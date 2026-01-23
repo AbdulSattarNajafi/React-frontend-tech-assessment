@@ -25,15 +25,15 @@ const api = axios.create({
 export const fetchTasks = async (options = {}) => {
   try {
     const params = new URLSearchParams();
-    
+
     if (options.status) params.append('status', options.status);
     if (options.priority) params.append('priority', options.priority);
     if (options.sortBy) params.append('sortBy', options.sortBy);
     if (options.order) params.append('order', options.order);
-    
+
     const queryString = params.toString();
     const url = `/tasks${queryString ? `?${queryString}` : ''}`;
-    
+
     const response = await api.get(url);
     return response.data;
   } catch (error) {
